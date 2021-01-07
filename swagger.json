@@ -1,0 +1,159 @@
+{
+   "swagger": "2.0",
+   "info": {
+      "version": "1.0.0",
+      "title": "Car Booking swagger for IEP"
+   },
+   "servers": [
+      {
+         "url": "/",
+         "description": "Local Dev, or from Heroku"
+      }
+   ],
+   "tags": [
+      {
+         "name": "carBooking",
+         "description": "API for users in the system"
+      }
+   ],
+   "schemes": [
+      "https",
+      "http"
+   ],
+   "consumes": [
+      "application/json"
+   ],
+   "produces": [
+      "application/json"
+   ],
+   "paths": {
+      "/carbooking/fetchCarType": {
+         "get": {
+            "tags": [
+               "carBooking"
+            ],
+            "description": "Get car Type",
+            "parameters": [],
+            "produces": [
+               "array"
+            ],
+            "responses": {
+               "200": {
+                  "description": "Ok",
+                  "schema": {
+                     "$ref": "#/definitions/fetchCarTypeResponse"
+                  }
+               }
+            }
+         }
+      },
+      "/carBooking/fetchCarDetails": {
+         "post": {
+            "tags": [
+               "carBooking"
+            ],
+            "description": "fetch Car Details",
+            "parameters": [
+               {
+                  "name": "fetchCarDetails",
+                  "in": "body",
+                  "description": "fetch Car Details",
+                  "schema": {
+                     "$ref": "#/definitions/fetchCarDetails"
+                  }
+               }
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "responses": {
+               "200": {
+                  "description": "Car Details fetched successfully.",
+                  "schema": {
+                     "$ref": "#/definitions/fetchCarDetailsResponse"
+                  }
+               }
+            }
+         }
+      },
+      "/carBooking/registerUser": {
+         "post": {
+            "tags": [
+               "carBooking"
+            ],
+            "description": "Register User",
+            "parameters": [
+               {
+                  "name": "registerUser",
+                  "in": "body",
+                  "description": "registerUser",
+                  "schema": {
+                     "$ref": "#/definitions/registerUser"
+                  }
+               }
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "responses": {
+               "200": {
+                  "description": "New user is created",
+                  "schema": {
+                     "$ref": "#/definitions/registerUserResponse"
+                  }
+               }
+            }
+         }
+      }
+   },
+   "definitions": {
+
+      "fetchCarTypeResponse": {
+         "properties": {
+               "type": "array"
+            
+         }
+      },
+      
+      "fetchCarDetails": {
+         "properties": {
+            "type": {
+               "type": "string"
+            }
+         }
+      },
+      "fetchCarDetailsResponse": {
+         "properties": {
+            "car": {
+               "type": "string"
+            },
+            "details": {
+               "type": "array"
+            }
+         }
+      },
+      "registerUser": {
+         "properties": {
+            "name": {
+               "type": "string"
+            },
+            "email": {
+               "type": "string"
+            },
+            "password": {
+               "type": "string"
+            }
+         }
+      },
+      "registerUserResponse": {
+         "properties": {
+            "message": {
+               "type": "string"
+            },
+            "status": {
+               "type": "number"
+            }
+         }
+      }
+   }
+}

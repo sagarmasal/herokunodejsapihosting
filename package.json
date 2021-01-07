@@ -1,0 +1,22 @@
+{
+  "name": "bookcar-node-api",
+  "version": "1.0.0",
+  "description": "A Node.js RESTful API Carbboking Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "node",
+    "restful",
+    "api"
+  ],
+  "author": "sagar masal",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-localstorage": "^2.1.6",
+    "swagger-ui-express": "^4.1.6"
+  }
+}
