@@ -4,7 +4,7 @@ var express = require('express'),
     bodyParser = require('body-parser');
 var swaggerUi = require('swagger-ui-express');
 var swaggerDocument = require('./swagger.json');
-
+const port = process.env.PORT || 3000;
 
 var app = express();
 var carBooking = require('./api/controllers/carBooking')
@@ -66,7 +66,7 @@ app.post('/carbooking/registerUser', (req, res) => {
 
  
 
-app.listen(3000, () => console.log(`Example app listening on port ${3000}!`))
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
  
 
